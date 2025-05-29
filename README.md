@@ -16,6 +16,10 @@ python3 -m venv dc
 ```
 source dc/bin/activate
 ```
+**install bahan**
+```
+pip3 install -r requirements.txt
+```
 **buka script**
 ```
 nano bot.py
