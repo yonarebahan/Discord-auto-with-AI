@@ -49,6 +49,7 @@ nano bot.py
 = isi TOKEN DC & channel ID target
 
 = klik ctrl + x -> klik y -> klik enter (untuk keluar)
+
 **Mainkan script**
 ```
 python3 bot.py
