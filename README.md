@@ -1,5 +1,9 @@
 # Discord-auto-with-AI From Airdrop Sambil Rebahan
 
+# sistem Requarements
+- 4 core cpu
+- 8GB ram
+  
 # Fitur
 - auto chat with AI
 - Untuk Push level Dscord
@@ -46,7 +50,7 @@ pip3 install -r requirements.txt
 ```
 nano bot.py
 ```
-= isi TOKEN DC & channel ID target
+= isi TOKEN DC & channel ID target (tutorial token : https://www.youtube.com/watch?v=zyl6VGTJ4fY)
 
 = klik ctrl + x -> klik y -> klik enter (untuk keluar)
 
