@@ -6,7 +6,7 @@
 
 **buat screen**
 ```
-sudo apt install screen
+sudo apt update && sudo apt install screen
 ```
 ```
 screen -S AI
