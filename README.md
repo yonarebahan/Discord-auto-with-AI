@@ -23,6 +23,7 @@ ollama pull gemma:2b
 ```
 **Keluar screen AI**
 - crtl a+d
+
 **buat screen discord**
 ```
 screen -S discord
