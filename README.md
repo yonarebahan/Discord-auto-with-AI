@@ -4,6 +4,26 @@
 - auto chat with AI
 - Untuk Push level Dscord
 
+**buat screen**
+```
+screen -S AI
+```
+**install AI lokal**
+```
+curl -fsSL https://ollama.com/install.sh | sh
+```
+```
+ollama serve
+```
+```
+ollama pull gemma:2b
+```
+**Keluar screen AI**
+crtl a+d
+**buat screen discord**
+```
+screen -S discord
+```
 **Install Script**
 ```
 git clone https://github.com/yonarebahan/Discord-auto-with-AI.git
@@ -12,8 +32,6 @@ cd Discord-auto-with-AI
 Buat environtment
 ```
 python3 -m venv dc
-```
-```
 source dc/bin/activate
 ```
 **install bahan**
@@ -30,6 +48,15 @@ nano bot.py
 **Mainkan script**
 ```
 python3 bot.py
+```
+## Fungsi tambahan
+masuk screen AI
+```
+screen -r AI
+```
+masuk screen discord
+```
+screen -r discord
 ```
 ## DISCLAIMER
 Gunakan dengan bijak, semua risiko dan tanggung jawab ada di tangan pengguna.
