@@ -6,6 +6,9 @@
 
 **buat screen**
 ```
+sudo apt install screen
+```
+```
 screen -S AI
 ```
 **install AI lokal**
