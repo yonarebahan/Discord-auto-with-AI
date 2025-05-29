@@ -22,7 +22,7 @@ ollama serve
 ollama pull gemma:2b
 ```
 **Keluar screen AI**
-crtl a+d
+- crtl a+d
 **buat screen discord**
 ```
 screen -S discord
