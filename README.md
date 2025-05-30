@@ -46,6 +46,12 @@ source dc/bin/activate
 ```
 pip3 install -r requirements.txt
 ```
+```
+pip uninstall discord discord.py discord.py-self -y
+```
+```
+pip install git+https://github.com/dolfies/discord.py-self@71609f4f62649d18bdf14f0e286b7e62bc605390
+```
 **buka script**
 ```
 nano bot.py
