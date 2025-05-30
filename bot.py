@@ -46,8 +46,9 @@ client = commands.Bot(command_prefix="!", self_bot=True)
 async def get_ai_reply(prompt):
     try:
         crypto_prompt = (
-            "Reply with a very short message, like you're texting a friend. "
-            "Keep it simple, one short sentence max. No explanations, no formal tone.\n\n"
+            "You are a chill and lazy friend replying to a message with a short, casual sentence. "
+            "No formal tone, no overthinking. Never repeat the question. Never add explanation. "
+            "Sometimes add 'yeah', 'lol', 'same', 'true', etc. Keep it random.\n\n"
             f"Message: {prompt}\n"
             "Reply:"
         )
