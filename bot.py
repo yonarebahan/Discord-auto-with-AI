@@ -4,7 +4,7 @@ import asyncio
 import requests
 from datetime import datetime, timedelta
 from discord.ext import tasks, commands
-from discord import Message
+from discord import Message, Intents
 
 print(r'''
                       .^!!^.
@@ -29,18 +29,21 @@ print(r'''
 ''')
 
 # === Konfigurasi ===
-DISCORD_USER_TOKEN = "your_discord_token"
-CHANNEL_ID = ISI channel ID
-INTERVAL_MENIT = 3
+DISCORD_USER_TOKEN = os.getenv("DISCORD_USER_TOKEN", "your_discord_token")
+CHANNEL_ID = int(os.getenv("CHANNEL_ID", "123456789012345678"))  # Ganti dengan ID channel
+INTERVAL_MENIT = int(os.getenv("INTERVAL_MENIT", 3))
 OLLAMA_URL = "http://localhost:11434"
-OLLAMA_MODEL = "gemma:2b"
+OLLAMA_MODEL = "llama3:8b"
 
 # === State ===
 last_response_time = datetime.min
 pending_message = None
 
 # Inisialisasi client sebagai selfbot
-client = commands.Bot(command_prefix="!", self_bot=True)
+intents = Intents.default()
+intents.messages = True
+intents.guilds = True
+client = commands.Bot(command_prefix="!", self_bot=True, intents=intents)
 
 # === Fungsi ambil jawaban dari AI lokal (Ollama) ===
 async def get_ai_reply(prompt):
@@ -80,8 +83,8 @@ async def on_message(message: Message):
     if message.author.id == client.user.id:
         return
 
-    # print(f"[📥] Pesan dari {message.author.name}: {message.content}")
-    pending_message = message
+    if client.user in message.mentions or message.reference:
+        pending_message = message
 
 # === Loop interval kirim balasan ===
 @tasks.loop(seconds=10)
@@ -93,7 +96,6 @@ async def reply_loop():
 
     now = datetime.now()
     if now - last_response_time < timedelta(minutes=INTERVAL_MENIT):
-        # print(f"[⏳] Tunggu {INTERVAL_MENIT} menit. Abaikan pesan dari {pending_message.author.name}")
         return
 
     reply = await get_ai_reply(pending_message.content)
@@ -106,4 +108,5 @@ async def reply_loop():
         print(f"[❌] Gagal kirim: {e}")
 
 # === Jalankan bot ===
-client.run(DISCORD_USER_TOKEN)
+client.run(DISCORD_USER_TOKEN, bot=False)
+
