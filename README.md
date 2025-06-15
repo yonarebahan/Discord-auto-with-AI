@@ -10,6 +10,7 @@
 - auto restart (fix some bug)
 - random time spam
 - Untuk Push level Dscord
+- AI lebih manusiawi 
 
 **buat screen**
 ```
